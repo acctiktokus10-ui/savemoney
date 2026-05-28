@@ -350,6 +350,15 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [copied, setCopied]   = useState({});
 
+  // Warm-up API ngay khi load trang để tránh cold start
+  useEffect(() => {
+    fetch("/api/convert", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ links: [], subId: "warmup" }),
+    }).catch(() => {});
+  }, []);
+
   // Validate: chữ + số, phải kết thúc bằng 5 chữ số
   function validateUsername(v) {
     return /^[a-zA-Z0-9_\.]+\d{5}$/.test(v.trim());
