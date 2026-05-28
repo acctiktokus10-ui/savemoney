@@ -926,7 +926,7 @@ const MOCK_REFERRALS = [
   { name: "phuonglan77890", date: "08/05/2024", bonus: 20000,  status: "pending" },
 ];
 
-
+function fmt(n) {
   return new Intl.NumberFormat("vi-VN").format(n) + "đ";
 }
 
