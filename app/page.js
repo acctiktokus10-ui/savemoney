@@ -960,6 +960,17 @@ export default function App() {
   const [savedProfile, setSavedProfile] = useState(null);
   const [profileSaved, setProfileSaved] = useState(false);
 
+  // Auto-login: khôi phục phiên đăng nhập từ lần trước
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("hhh_user");
+      if (saved) {
+        setLoginVal(saved); // hiện sẵn tên để xác nhận
+        setUser(saved);     // tự đăng nhập luôn
+      }
+    } catch {}
+  }, []);
+
   // Warm-up API
   useEffect(() => {
     fetch("/api/convert", {
@@ -994,10 +1005,12 @@ export default function App() {
       return;
     }
     setLoginErr("");
+    try { localStorage.setItem("hhh_user", v); } catch {}
     setUser(v);
   }
 
   function handleLogout() {
+    try { localStorage.removeItem("hhh_user"); } catch {}
     setUser(null);
     setResults([]);
     setInput("");
@@ -1605,8 +1618,8 @@ export default function App() {
 
         {/* ── TAB: REFERRAL ── */}
         {tab === "referral" && (() => {
-          const refCode = user.slice(0,4).toUpperCase() + Math.abs(user.split("").reduce((a,c) => a + c.charCodeAt(0), 0) % 9000 + 1000);
-          const refLink = `https://hoanhoahong.vn/?ref=${refCode}`;
+          const refCode = user;  // Mã giới thiệu chính là tên đăng nhập
+          const refLink = `https://hoanhoahong.vn/?ref=${encodeURIComponent(user)}`;
           const totalBonus = MOCK_REFERRALS.filter(r => r.status === "earned").reduce((s,r) => s + r.bonus, 0);
           const pendingBonus = MOCK_REFERRALS.filter(r => r.status === "pending").reduce((s,r) => s + r.bonus, 0);
           const FRIEND_COLORS = ["#7c3aed","#0ea5e9","#ec4899","#10b981","#f97316"];
