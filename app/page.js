@@ -8,22 +8,22 @@ const css = `
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --red:       #7c3aed;
-  --red-deep:  #6d28d9;
-  --red-soft:  #f5f3ff;
-  --red-glow:  rgba(124,58,237,0.22);
-  --orange:    #a78bfa;
-  --yellow:    #c4b5fd;
+  --red:       #ec4899;
+  --red-deep:  #db2777;
+  --red-soft:  #fdf2f8;
+  --red-glow:  rgba(236,72,153,0.22);
+  --orange:    #f472b6;
+  --yellow:    #fbcfe8;
   --green:     #2e7d32;
   --green-bg:  #f1faf2;
   --err:       #c62828;
   --err-bg:    #fff5f5;
   --white:     #ffffff;
-  --bg:        #f3f0ff;
-  --border:    #e8e8e8;
-  --text:      #212121;
-  --muted:     #9e9e9e;
-  --card-shadow: 0 4px 32px rgba(124,58,237,0.10);
+  --bg:        #fff8fb;
+  --border:    #fbcfe8;
+  --text:      #be185d;
+  --muted:     #f9a8d4;
+  --card-shadow: 0 4px 32px rgba(236,72,153,0.10);
 }
 
 html, body { height: 100%; }
