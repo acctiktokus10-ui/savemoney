@@ -620,6 +620,198 @@ textarea::placeholder { color: #ccc; }
   display: flex; align-items: center; gap: 8px;
 }
 
+/* ── LEADERBOARD ── */
+.lb-banner {
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+  border-radius: 16px; padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.25);
+  color: #fff;
+  display: flex; align-items: center; gap: 14px;
+}
+.lb-banner-emoji { font-size: 2.4rem; }
+.lb-banner h2 { font-family:'Lexend',sans-serif; font-weight:700; font-size:1.05rem; color:#fff; margin-bottom:3px; }
+.lb-banner p { font-size:0.82rem; color:rgba(255,255,255,0.82); }
+
+.lb-period-tabs {
+  display:flex; gap:8px; margin-bottom:16px; overflow-x:auto;
+  padding-bottom:2px;
+}
+.lb-period-tab {
+  padding:7px 18px; border-radius:20px;
+  border:1.5px solid var(--border); background:#fff;
+  font-family:'Lexend',sans-serif; font-size:0.8rem; font-weight:600;
+  color:var(--muted); cursor:pointer; transition:all 0.15s;
+  white-space:nowrap;
+}
+.lb-period-tab.active { background:linear-gradient(135deg,#7c3aed,#ec4899); border-color:transparent; color:#fff; }
+
+.lb-podium {
+  display:flex; align-items:flex-end; justify-content:center; gap:10px;
+  margin-bottom:24px; padding: 0 8px;
+}
+.lb-podium-item {
+  flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;
+  background:#fff; border-radius:14px; padding:12px 8px 14px;
+  border:1.5px solid var(--border);
+  transition:transform 0.2s;
+}
+.lb-podium-item.rank-1 { border-color:#fbbf24; background:linear-gradient(180deg,#fffbeb,#fff); }
+.lb-podium-item.rank-2 { border-color:#94a3b8; }
+.lb-podium-item.rank-3 { border-color:#f97316; background:linear-gradient(180deg,#fff7ed,#fff); }
+.lb-podium-item.me { box-shadow:0 0 0 2px var(--red); }
+.lb-crown { font-size:1.4rem; line-height:1; }
+.lb-avatar {
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Lexend',sans-serif; font-weight:700; font-size:1.1rem;
+  color:#fff;
+}
+.lb-rank-badge {
+  font-family:'Lexend',sans-serif; font-weight:800; font-size:1.5rem; color:#7c3aed;
+}
+.lb-podium-name { font-family:'Lexend',sans-serif; font-weight:700; font-size:0.78rem; color:var(--text); text-align:center; }
+.lb-podium-name.me-name { color:var(--red); }
+.lb-podium-cashback { font-family:'Lexend',sans-serif; font-weight:700; font-size:0.82rem; color:#2e7d32; }
+.lb-me-tag {
+  font-size:0.65rem; background:var(--red); color:#fff;
+  padding:1px 6px; border-radius:6px; font-weight:700;
+  font-family:'Lexend',sans-serif;
+}
+
+.lb-list { display:flex; flex-direction:column; gap:10px; }
+.lb-row {
+  display:flex; align-items:center; gap:12px;
+  background:#fff; border-radius:12px; border:1.5px solid var(--border);
+  padding:12px 14px; transition:box-shadow 0.15s;
+}
+.lb-row:hover { box-shadow:0 2px 12px rgba(124,58,237,0.1); }
+.lb-row.lb-me { border-color:var(--red); background:var(--red-soft); }
+.lb-row-rank {
+  min-width:28px; font-family:'Lexend',sans-serif; font-weight:800;
+  font-size:0.95rem; color:var(--muted); text-align:center;
+}
+.lb-row-rank.top3 { color:#7c3aed; }
+.lb-row-avatar {
+  width:36px; height:36px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Lexend',sans-serif; font-weight:700; font-size:0.9rem; color:#fff;
+  flex-shrink:0;
+}
+.lb-row-info { flex:1; min-width:0; }
+.lb-row-name { font-family:'Lexend',sans-serif; font-weight:600; font-size:0.88rem; color:var(--text); }
+.lb-row-orders { font-size:0.75rem; color:var(--muted); margin-top:1px; }
+.lb-row-amount { font-family:'Lexend',sans-serif; font-weight:700; font-size:0.9rem; color:#2e7d32; }
+
+.lb-my-rank-card {
+  background:linear-gradient(135deg,var(--red),var(--orange));
+  border-radius:14px; padding:16px 20px;
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:16px; box-shadow:0 4px 16px var(--red-glow);
+}
+.lb-my-rank-left { display:flex; flex-direction:column; gap:2px; }
+.lb-my-rank-label { font-size:0.78rem; color:rgba(255,255,255,0.8); font-family:'Lexend',sans-serif; }
+.lb-my-rank-val { font-family:'Lexend',sans-serif; font-weight:800; font-size:1.5rem; color:#fff; }
+.lb-my-rank-sub { font-size:0.75rem; color:rgba(255,255,255,0.75); }
+
+/* ── REFERRAL ── */
+.ref-hero {
+  background:linear-gradient(135deg,#0ea5e9 0%,#7c3aed 50%,#ec4899 100%);
+  border-radius:16px; padding:24px 22px; margin-bottom:20px;
+  box-shadow:0 4px 24px rgba(14,165,233,0.25);
+  text-align:center; color:#fff;
+}
+.ref-hero h2 { font-family:'Lexend',sans-serif; font-weight:800; font-size:1.2rem; margin-bottom:6px; }
+.ref-hero p { font-size:0.85rem; color:rgba(255,255,255,0.88); line-height:1.5; }
+.ref-bonus-pill {
+  display:inline-block; margin-top:10px;
+  background:rgba(255,255,255,0.2); border:1.5px solid rgba(255,255,255,0.4);
+  border-radius:20px; padding:4px 14px;
+  font-family:'Lexend',sans-serif; font-weight:700; font-size:0.85rem; color:#fff;
+}
+
+.ref-code-box {
+  background:var(--white); border-radius:14px; border:2px dashed var(--red);
+  padding:20px 20px 16px; text-align:center; margin-bottom:14px;
+}
+.ref-code-label { font-size:0.78rem; color:var(--muted); font-weight:600; margin-bottom:8px; letter-spacing:0.3px; }
+.ref-code-val {
+  font-family:'Lexend',sans-serif; font-weight:800; font-size:1.8rem;
+  color:var(--text); letter-spacing:3px; margin-bottom:14px;
+}
+.ref-code-btns { display:flex; gap:8px; justify-content:center; }
+.btn-ref-copy {
+  padding:9px 18px; background:var(--red-soft); border:1.5px solid var(--red);
+  color:var(--red); border-radius:10px;
+  font-family:'Lexend',sans-serif; font-weight:700; font-size:0.85rem;
+  cursor:pointer; transition:background 0.15s; display:flex; align-items:center; gap:6px;
+}
+.btn-ref-copy:hover { background:var(--yellow); }
+.btn-ref-copy.done { background:var(--red); color:#fff; border-color:var(--red); }
+.btn-ref-share {
+  padding:9px 18px; background:linear-gradient(135deg,var(--red),var(--orange));
+  border:none; color:#fff; border-radius:10px;
+  font-family:'Lexend',sans-serif; font-weight:700; font-size:0.85rem;
+  cursor:pointer; transition:opacity 0.15s; display:flex; align-items:center; gap:6px;
+  box-shadow:0 3px 12px var(--red-glow);
+}
+.btn-ref-share:hover { opacity:0.9; }
+
+.ref-link-box {
+  background:#f8f9ff; border:1.5px solid var(--border); border-radius:12px;
+  padding:14px 16px; margin-bottom:14px;
+}
+.ref-link-label { font-size:0.75rem; color:var(--muted); margin-bottom:6px; font-weight:600; }
+.ref-link-val {
+  font-size:0.78rem; color:#1565c0; word-break:break-all;
+  line-height:1.5; font-family:'Lexend',sans-serif;
+}
+
+.ref-stats-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;
+}
+.ref-stat-card {
+  background:#fff; border-radius:12px; border:1.5px solid var(--border);
+  padding:16px 14px; text-align:center;
+}
+.ref-stat-val {
+  font-family:'Lexend',sans-serif; font-weight:800; font-size:1.5rem;
+  color:var(--text); margin-bottom:4px;
+}
+.ref-stat-val.green { color:#2e7d32; }
+.ref-stat-label { font-size:0.75rem; color:var(--muted); line-height:1.3; }
+
+.ref-friend-list { display:flex; flex-direction:column; gap:10px; }
+.ref-friend-item {
+  display:flex; align-items:center; gap:12px;
+  background:#fff; border-radius:12px; border:1.5px solid var(--border);
+  padding:12px 14px;
+}
+.ref-friend-avatar {
+  width:38px; height:38px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Lexend',sans-serif; font-weight:700; font-size:0.95rem; color:#fff;
+  flex-shrink:0;
+}
+.ref-friend-info { flex:1; }
+.ref-friend-name { font-family:'Lexend',sans-serif; font-weight:600; font-size:0.87rem; color:var(--text); }
+.ref-friend-date { font-size:0.73rem; color:var(--muted); margin-top:2px; }
+.ref-friend-bonus {
+  font-family:'Lexend',sans-serif; font-weight:700; font-size:0.88rem;
+}
+.ref-friend-bonus.earned { color:#2e7d32; }
+.ref-friend-bonus.pending { color:#f57f17; }
+
+.ref-how-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px;
+}
+.ref-how-item {
+  background:var(--red-soft); border-radius:12px; padding:14px 12px; text-align:center;
+}
+.ref-how-icon { font-size:1.6rem; margin-bottom:6px; }
+.ref-how-title { font-family:'Lexend',sans-serif; font-weight:700; font-size:0.82rem; color:var(--text); margin-bottom:4px; }
+.ref-how-desc { font-size:0.73rem; color:var(--muted); line-height:1.4; }
+
 /* ── WITHDRAW MODAL ── */
 .modal-overlay {
   position: fixed; inset: 0;
@@ -717,7 +909,24 @@ const MOCK_TRANSACTIONS = [
   { id: 4, type: "withdraw", title: "Rút tiền về tài khoản",       date: "15/05/2024", amount: -50000, canWithdraw: false, note: null },
 ];
 
-function fmt(n) {
+const MOCK_LEADERBOARD = [
+  { name: "thanhthao96474", cashback: 425000, orders: 18, color: "#ec4899" },
+  { name: "minhanh12345",   cashback: 387000, orders: 14, color: "#7c3aed" },
+  { name: "hoanglong54321", cashback: 310000, orders: 11, color: "#0ea5e9" },
+  { name: "phuonglan77890", cashback: 256000, orders: 9,  color: "#f97316" },
+  { name: "vanquyen23456",  cashback: 198000, orders: 7,  color: "#10b981" },
+  { name: "bichngoc88123",  cashback: 145000, orders: 5,  color: "#f59e0b" },
+  { name: "tuananh44567",   cashback: 92000,  orders: 4,  color: "#6366f1" },
+  { name: "ngocmai11098",   cashback: 67000,  orders: 3,  color: "#ef4444" },
+];
+
+const MOCK_REFERRALS = [
+  { name: "minhanh12345",   date: "20/05/2024", bonus: 20000,  status: "earned" },
+  { name: "hoanglong54321", date: "15/05/2024", bonus: 20000,  status: "earned" },
+  { name: "phuonglan77890", date: "08/05/2024", bonus: 20000,  status: "pending" },
+];
+
+
   return new Intl.NumberFormat("vi-VN").format(n) + "đ";
 }
 
@@ -726,7 +935,15 @@ export default function App() {
   const [user, setUser]           = useState(null);
   const [loginVal, setLoginVal]   = useState("");
   const [loginErr, setLoginErr]   = useState("");
-  const [tab, setTab]             = useState("convert");   // convert | orders | wallet | profile
+  const [tab, setTab]             = useState("convert");   // convert | orders | wallet | leaderboard | referral | profile
+
+  // Leaderboard tab
+  const [lbPeriod, setLbPeriod]   = useState("month"); // month | week | all
+
+  // Referral tab
+  const [refCopied, setRefCopied] = useState(false);
+  const [refLinkCopied, setRefLinkCopied] = useState(false);
+
 
   // Convert tab
   const [input, setInput]         = useState("");
@@ -892,7 +1109,7 @@ export default function App() {
           <div className="dot" />
         </div>
         <div style={{ display:"flex", alignItems:"center", gap:10 }}>
-          <div className="header-user">
+          <div className="header-user" onClick={() => setTab("profile")}>
             <div className="header-avatar">{user[0].toUpperCase()}</div>
             <span className="header-name">{user}</span>
           </div>
@@ -1287,15 +1504,256 @@ export default function App() {
           </>
         )}
 
+        {/* ── TAB: LEADERBOARD ── */}
+        {tab === "leaderboard" && (() => {
+          // Simulated ranking — inject current user at position based on mock data
+          const allUsers = [...MOCK_LEADERBOARD];
+          const myIdx = allUsers.findIndex(u => u.name === user);
+          const myRankData = myIdx >= 0
+            ? { ...allUsers[myIdx], rank: myIdx + 1 }
+            : { name: user, cashback: 23500, orders: 2, color: "#ec4899", rank: allUsers.length + 1 };
+          if (myIdx < 0) allUsers.push({ name: user, cashback: 23500, orders: 2, color: "#ec4899" });
+
+          const podium = [allUsers[1], allUsers[0], allUsers[2]]; // 2nd, 1st, 3rd for visual podium
+          const PODIUM_HEIGHT = [75, 100, 55]; // visual heights %
+          const PODIUM_CROWNS = ["🥈","🥇","🥉"];
+          const PODIUM_RANKS = [2, 1, 3];
+
+          return (
+            <>
+              <div className="lb-banner">
+                <div className="lb-banner-emoji">🏆</div>
+                <div>
+                  <h2>Bảng Xếp Hạng</h2>
+                  <p>Top người hoàn tiền nhiều nhất — cập nhật hàng ngày</p>
+                </div>
+              </div>
+
+              {/* My rank highlight */}
+              <div className="lb-my-rank-card">
+                <div className="lb-my-rank-left">
+                  <div className="lb-my-rank-label">🎯 Hạng của bạn</div>
+                  <div className="lb-my-rank-val">#{myRankData.rank}</div>
+                  <div className="lb-my-rank-sub">trong tháng này</div>
+                </div>
+                <div style={{textAlign:"right"}}>
+                  <div style={{fontSize:"0.75rem",color:"rgba(255,255,255,0.8)",marginBottom:2}}>Tổng hoàn tiền</div>
+                  <div style={{fontFamily:"'Lexend',sans-serif",fontWeight:800,fontSize:"1.1rem",color:"#fff"}}>{fmt(myRankData.cashback)}</div>
+                  <div style={{fontSize:"0.72rem",color:"rgba(255,255,255,0.75)",marginTop:2}}>{myRankData.orders} đơn hàng</div>
+                </div>
+              </div>
+
+              {/* Period tabs */}
+              <div className="lb-period-tabs">
+                {[{k:"week",l:"Tuần này"},{k:"month",l:"Tháng này"},{k:"all",l:"Tất cả"}].map(p => (
+                  <button key={p.k} className={`lb-period-tab ${lbPeriod===p.k?"active":""}`} onClick={() => setLbPeriod(p.k)}>{p.l}</button>
+                ))}
+              </div>
+
+              {/* Podium */}
+              <div className="card" style={{marginBottom:16}}>
+                <div className="card-title" style={{marginBottom:16}}>🥇 Top 3 dẫn đầu</div>
+                <div className="lb-podium">
+                  {podium.map((u, vi) => {
+                    const rank = PODIUM_RANKS[vi];
+                    const isMe = u?.name === user;
+                    return (
+                      <div
+                        key={rank}
+                        className={`lb-podium-item rank-${rank}${isMe?" me":""}`}
+                        style={{ paddingTop: vi === 1 ? 12 : 20, minHeight: `${PODIUM_HEIGHT[vi]+60}px`, justifyContent:"flex-end" }}
+                      >
+                        <div className="lb-crown">{PODIUM_CROWNS[vi]}</div>
+                        <div className="lb-avatar" style={{background:u?.color||"#ccc", width:vi===1?50:38,height:vi===1?50:38,fontSize:vi===1?"1.2rem":"0.95rem"}}>
+                          {u?.name?.[0]?.toUpperCase()}
+                        </div>
+                        <div className={`lb-podium-name${isMe?" me-name":""}`}>{isMe?"Bạn":u?.name?.split(/\d/)[0]}</div>
+                        <div className="lb-podium-cashback">{fmt(u?.cashback||0)}</div>
+                        {isMe && <div className="lb-me-tag">Bạn</div>}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Full list */}
+              <div className="card">
+                <div className="card-title" style={{marginBottom:14}}>📋 Xếp hạng đầy đủ</div>
+                <div className="lb-list">
+                  {allUsers.map((u, idx) => {
+                    const isMe = u.name === user;
+                    const rank = idx + 1;
+                    return (
+                      <div key={u.name} className={`lb-row${isMe?" lb-me":""}`}>
+                        <div className={`lb-row-rank${rank<=3?" top3":""}`}>
+                          {rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : `#${rank}`}
+                        </div>
+                        <div className="lb-row-avatar" style={{background:u.color}}>{u.name[0].toUpperCase()}</div>
+                        <div className="lb-row-info">
+                          <div className="lb-row-name">{isMe ? `${u.name} (Bạn)` : u.name}</div>
+                          <div className="lb-row-orders">{u.orders} đơn hoàn tiền</div>
+                        </div>
+                        <div className="lb-row-amount">{fmt(u.cashback)}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </>
+          );
+        })()}
+
+        {/* ── TAB: REFERRAL ── */}
+        {tab === "referral" && (() => {
+          const refCode = user.slice(0,4).toUpperCase() + Math.abs(user.split("").reduce((a,c) => a + c.charCodeAt(0), 0) % 9000 + 1000);
+          const refLink = `https://hoanhoahong.vn/?ref=${refCode}`;
+          const totalBonus = MOCK_REFERRALS.filter(r => r.status === "earned").reduce((s,r) => s + r.bonus, 0);
+          const pendingBonus = MOCK_REFERRALS.filter(r => r.status === "pending").reduce((s,r) => s + r.bonus, 0);
+          const FRIEND_COLORS = ["#7c3aed","#0ea5e9","#ec4899","#10b981","#f97316"];
+
+          return (
+            <>
+              <div className="ref-hero">
+                <div style={{fontSize:"2.4rem",marginBottom:6}}>🎁</div>
+                <h2>Giới Thiệu Bạn Bè</h2>
+                <p>Mời bạn bè tham gia — cả hai cùng nhận thưởng khi họ mua hàng đầu tiên qua link hoàn tiền</p>
+                <div className="ref-bonus-pill">🎉 Mỗi bạn bè = +20.000đ thưởng cho bạn</div>
+              </div>
+
+              {/* Ref code */}
+              <div className="ref-code-box">
+                <div className="ref-code-label">MÃ GIỚI THIỆU CỦA BẠN</div>
+                <div className="ref-code-val">{refCode}</div>
+                <div className="ref-code-btns">
+                  <button
+                    className={`btn-ref-copy${refCopied?" done":""}`}
+                    onClick={() => {
+                      navigator.clipboard.writeText(refCode);
+                      setRefCopied(true);
+                      setTimeout(() => setRefCopied(false), 2200);
+                    }}
+                  >
+                    {refCopied ? "✓ Đã chép!" : "📋 Sao chép mã"}
+                  </button>
+                  <button
+                    className="btn-ref-share"
+                    onClick={() => {
+                      const msg = `🛍️ Tham gia Hoàn Hoa Hồng để hoàn tiền khi mua Shopee!\nDùng mã mời của mình: ${refCode}\nĐăng ký tại: ${refLink}`;
+                      if (navigator.share) { navigator.share({ title:"Hoàn Hoa Hồng", text: msg, url: refLink }); }
+                      else { navigator.clipboard.writeText(msg); alert("Đã sao chép lời mời vào clipboard!"); }
+                    }}
+                  >
+                    📤 Chia sẻ ngay
+                  </button>
+                </div>
+              </div>
+
+              {/* Ref link */}
+              <div className="ref-link-box">
+                <div className="ref-link-label">🔗 LINK GIỚI THIỆU CÁ NHÂN</div>
+                <div style={{display:"flex",alignItems:"center",gap:8}}>
+                  <div className="ref-link-val" style={{flex:1}}>{refLink}</div>
+                  <button
+                    className={`btn-ref-copy${refLinkCopied?" done":""}`}
+                    style={{padding:"6px 12px",fontSize:"0.75rem",whiteSpace:"nowrap"}}
+                    onClick={() => {
+                      navigator.clipboard.writeText(refLink);
+                      setRefLinkCopied(true);
+                      setTimeout(() => setRefLinkCopied(false), 2200);
+                    }}
+                  >
+                    {refLinkCopied ? "✓" : "Sao chép"}
+                  </button>
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="ref-stats-grid">
+                <div className="ref-stat-card">
+                  <div className="ref-stat-val">{MOCK_REFERRALS.length}</div>
+                  <div className="ref-stat-label">Bạn bè đã giới thiệu</div>
+                </div>
+                <div className="ref-stat-card">
+                  <div className="ref-stat-val green">{fmt(totalBonus)}</div>
+                  <div className="ref-stat-label">Thưởng đã nhận</div>
+                </div>
+                <div className="ref-stat-card">
+                  <div className="ref-stat-val">{MOCK_REFERRALS.filter(r=>r.status==="earned").length}</div>
+                  <div className="ref-stat-label">Đã kích hoạt mua hàng</div>
+                </div>
+                <div className="ref-stat-card">
+                  <div className="ref-stat-val" style={{color:"#f57f17"}}>{fmt(pendingBonus)}</div>
+                  <div className="ref-stat-label">Thưởng đang chờ</div>
+                </div>
+              </div>
+
+              {/* How it works */}
+              <div className="card" style={{marginBottom:14}}>
+                <div className="card-title" style={{marginBottom:12}}>📖 Cách hoạt động</div>
+                <div className="ref-how-grid">
+                  {[
+                    ["📲","Chia sẻ mã","Gửi mã mời hoặc link cho bạn bè qua Zalo, Facebook..."],
+                    ["✍️","Bạn đăng ký","Họ nhập mã của bạn khi đăng nhập lần đầu"],
+                    ["🛒","Họ mua hàng","Bạn bè thực hiện đơn đầu tiên qua link hoàn tiền"],
+                    ["💰","Bạn nhận thưởng","20.000đ vào ví của bạn ngay sau khi đơn hoàn thành"],
+                  ].map(([icon,title,desc]) => (
+                    <div key={title} className="ref-how-item">
+                      <div className="ref-how-icon">{icon}</div>
+                      <div className="ref-how-title">{title}</div>
+                      <div className="ref-how-desc">{desc}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Friends list */}
+              <div className="card">
+                <div className="card-title" style={{marginBottom:14}}>👥 Bạn bè đã giới thiệu</div>
+                {MOCK_REFERRALS.length === 0 ? (
+                  <div className="empty-state" style={{padding:"32px 16px"}}>
+                    <div className="empty-icon">👀</div>
+                    <div className="empty-title">Chưa có bạn bè nào</div>
+                    <div className="empty-desc">Chia sẻ mã để bắt đầu nhận thưởng!</div>
+                  </div>
+                ) : (
+                  <div className="ref-friend-list">
+                    {MOCK_REFERRALS.map((f,i) => (
+                      <div key={f.name} className="ref-friend-item">
+                        <div className="ref-friend-avatar" style={{background:FRIEND_COLORS[i%FRIEND_COLORS.length]}}>
+                          {f.name[0].toUpperCase()}
+                        </div>
+                        <div className="ref-friend-info">
+                          <div className="ref-friend-name">{f.name}</div>
+                          <div className="ref-friend-date">Tham gia {f.date}</div>
+                        </div>
+                        <div>
+                          <div className={`ref-friend-bonus ${f.status}`}>
+                            {f.status === "earned" ? `+${fmt(f.bonus)}` : `⏳ ${fmt(f.bonus)}`}
+                          </div>
+                          <div style={{fontSize:"0.7rem",color:f.status==="earned"?"#2e7d32":"#f57f17",textAlign:"right",marginTop:2}}>
+                            {f.status === "earned" ? "Đã nhận" : "Đang xử lý"}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </>
+          );
+        })()}
+
+
       </div>
 
       {/* BOTTOM NAVIGATION */}
       <nav className="bottom-nav">
         {[
-          { key:"convert", icon:"🔗", label:"Chuyển Link" },
-          { key:"orders",  icon:"📦", label:"Đơn Hàng" },
-          { key:"wallet",  icon:"💰", label:"Ví Tiền" },
-          { key:"profile", icon:"👤", label:"Thông Tin" },
+          { key:"convert",     icon:"🔗", label:"Chuyển Link" },
+          { key:"orders",      icon:"📦", label:"Đơn Hàng" },
+          { key:"wallet",      icon:"💰", label:"Ví Tiền" },
+          { key:"leaderboard", icon:"🏆", label:"Xếp Hạng" },
+          { key:"referral",    icon:"🎁", label:"Mời Bạn" },
         ].map(n => (
           <button
             key={n.key}
